@@ -1,0 +1,30 @@
+:root {
+    --bg-color: #ffe600;
+
+    --text-color-primary: #000000e6;
+    ---text-color-secondary: #0000008c;
+    ---text-color-tertiary: #ffffffff;
+    ---text-color-quartiary: #3483fa;
+    ---text-color-quartiary-hover: #2966c2;
+
+    --surface-color-error: #f23d4f;
+
+    --bg-color-button: #3483fa;
+    --bg-color-button-hover: #2966c2;
+
+    --ff-sans: "Roboto", sans-serif;
+
+    --fw-base: 400;
+
+    --fs-sm: 0.875em;
+    --fs-base: 1em;
+    --fs-lg: 1.5em;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
