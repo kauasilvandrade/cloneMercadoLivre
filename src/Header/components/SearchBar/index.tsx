@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 
-export function Header() {
-    return ( 
+export function SearchBar() {
+    return (
         <div>
             
         </div>
