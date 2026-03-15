@@ -6,6 +6,7 @@
     padding-block: 0.3rem;
     transition: .3s;
     border: 1px solid transparent;
+    grid-area: UserAddress;
 }
 
 .container:hover {

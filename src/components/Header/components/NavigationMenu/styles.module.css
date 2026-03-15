@@ -1,0 +1,35 @@
+.container {
+    grid-area: NavigationMenu;
+    margin-right: 5rem;
+}
+
+.container__menuList {
+    display: flex;
+    gap: 1rem;
+}
+
+.menuList__item {
+    display: flex;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.menuList__item img {
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.menuList__item a {
+    font-size: var(--fs-sm);
+    color: var(--text-color-primary);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    transition: .2s;
+}
+
+.menuList__item a:hover, .menuList__item:hover img ~ a {
+    color: rgba(0, 0, 0, 0.462);
+}

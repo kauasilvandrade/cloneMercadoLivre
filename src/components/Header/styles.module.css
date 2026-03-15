@@ -5,6 +5,13 @@
 }
 
 .container {
-    max-width: 75rem;
+    max-width: 77rem;
     margin: auto;
+
+    display: grid;
+    grid-template-columns: 11rem 43rem 23rem;
+    grid-template-areas:
+        "Logo SearchBar Ads"
+        "UserAddress NavigationMenu UserMenu";
+    align-items: center;
 }

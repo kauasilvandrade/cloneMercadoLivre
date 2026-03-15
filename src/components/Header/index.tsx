@@ -15,6 +15,8 @@ export function Header() {
                 <SearchBar />
                 <Ads />
                 <UserAddress />
+                <NavigationMenu />
+                <UserMenu />
             </div>
         </header>
     )
