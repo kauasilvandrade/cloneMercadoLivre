@@ -9,4 +9,4 @@ export function Logo() {
             </figure>
         </a>
     )
-}
+} 
