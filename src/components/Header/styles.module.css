@@ -1,0 +1,10 @@
+.header {
+    background-color: var(--bg-color);
+    width: 100%;
+    padding-block: 1rem;
+}
+
+.container {
+    max-width: 75rem;
+    margin: auto;
+}

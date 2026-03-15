@@ -7,6 +7,8 @@
     ---text-color-quartiary: #3483fa;
     ---text-color-quartiary-hover: #2966c2;
 
+    --color-gray: #a7a6a6;
+
     --surface-color-error: #f23d4f;
 
     --bg-color-button: #3483fa;
@@ -38,13 +40,26 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, input, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
+        border: none;
+    outline: none;
 	vertical-align: baseline;
 }
 
+figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {

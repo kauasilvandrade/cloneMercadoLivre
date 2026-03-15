@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    gap: 0.4rem;
+    font-size: var(--fs-sm);
+    border-radius: 10px;
+    padding-block: 0.3rem;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+
+.container:hover {
+    border: 1px solid black;
+}
+
+.container address p {
+    margin-bottom: 0.3rem;
+    font-style: initial;
+}
+
+.container address strong {
+    color: var(--text-color-primary);
+}
