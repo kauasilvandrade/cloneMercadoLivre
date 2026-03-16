@@ -1,9 +1,22 @@
 import styles from "./styles.module.css"
 
-export function InputField() {
+type Props = React.ComponentProps<"input"> & {
+    label: string
+    name: string
+}
+
+export function InputField({ label, name, ...rest }: Props) {
     return (
-        <div>
-            
+        <div className={styles.container}>
+
+            <label htmlFor={name}>{label}</label>
+
+            <input
+                id={name} 
+                name={name} 
+                {...rest}  
+            />
+
         </div>
     )
 }

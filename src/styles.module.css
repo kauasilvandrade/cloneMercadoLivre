@@ -1,0 +1,37 @@
+.container {
+    max-width: 43rem;
+    margin: 2rem auto;
+}
+
+.container h1 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2rem;
+}
+
+.container__form {
+    background-color: white;
+    width: 100%;
+    padding: 2rem;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px #00000021;
+}
+
+.container__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__form h4 {
+    font-weight: var(--fw-base);
+    font-size: var(--fs-base);
+    margin-bottom: 1.5rem;
+}
+
+.container__form p {
+    font-size: var(--fs-sm);
+    margin-bottom: 2rem;
+    color: var(--text-color-secondary);
+}

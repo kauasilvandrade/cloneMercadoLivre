@@ -1,9 +1,18 @@
+import stylesPrincipal from "../InputField/styles.module.css"
 import styles from "./styles.module.css"
 
-export function TextareaField() {
+type Props = React.ComponentProps<"textarea">
+
+export function TextareaField({...rest}: Props) {
     return (
-        <div>
-            
+        <div className={stylesPrincipal.container}>
+
+            <label htmlFor="info">Informações adicionais deste endereço (opcional)</label>
+
+            <textarea name="info" id="info" rows={3} className={styles.container__input} {...rest} ></textarea>
+
+            <span>0/128</span>
+
         </div>
     )
 }

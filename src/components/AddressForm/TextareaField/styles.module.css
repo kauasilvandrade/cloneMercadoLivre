@@ -1,0 +1,4 @@
+.container__input {
+    font-family: var(--ff-sans);
+    resize: none;
+}
