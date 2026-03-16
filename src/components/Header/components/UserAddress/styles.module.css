@@ -1,11 +1,15 @@
 .container {
     display: flex;
     gap: 0.4rem;
+
     font-size: var(--fs-sm);
-    border-radius: 10px;
     padding-block: 0.3rem;
-    transition: .3s;
+    border-radius: 10px;
+    margin-right: 1rem;
+
     border: 1px solid transparent;
+    transition: .3s;
+
     grid-area: UserAddress;
 }
 
