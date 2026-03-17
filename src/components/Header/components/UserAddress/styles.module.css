@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    gap: 0.4rem;
+
+    font-size: var(--fs-sm);
+    padding-block: 0.3rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+
+    border: 1px solid transparent;
+    
+    transition: .3s;
+    grid-area: UserAddress;
+}
+
+.container:hover {
+    border: 1px solid black;
+}
+
+.container address p {
+    font-style: initial;
+    margin-bottom: 0.3rem;
+}
+
+.container address strong {
+    color: var(--text-color-primary);
+}

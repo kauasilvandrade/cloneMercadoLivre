@@ -1,0 +1,7 @@
+.container {
+    grid-area: Ads;
+}
+
+.container img {
+    width: 100%;
+}

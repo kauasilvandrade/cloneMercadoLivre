@@ -1,0 +1,14 @@
+.container__input {
+    font-family: var(--ff-sans);
+    resize: none;
+}
+
+.container__span {
+    color: var(--text-color-secondary);
+    font-size: var(--fs-sm);
+    letter-spacing: 1px;
+
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}

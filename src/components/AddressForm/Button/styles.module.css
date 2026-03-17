@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: end;
+}
+
+.container button {
+    background-color: var(--bg-color-button);
+    color: white;
+    font-size: var(--fs-base);
+
+    padding: 1rem 1.7rem;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: .2s;
+}
+.container button:hover {
+    background-color: var(--bg-color-button-hover);
+}
