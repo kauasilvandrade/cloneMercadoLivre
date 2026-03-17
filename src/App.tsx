@@ -62,12 +62,14 @@ export function App() {
             name="name"
             label="Nome completo"
             placeholder="Ex: João Paulo"
+            size={"large"}
           />
 
           <InputField 
             name="contact"
             label="Telefone de contato"
             placeholder="Ex: 11 9607-1018"
+            size={"large"}
           />
 
           <Button />

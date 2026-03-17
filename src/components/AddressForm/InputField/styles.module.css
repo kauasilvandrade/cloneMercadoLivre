@@ -24,8 +24,8 @@
     width: 18.5rem;
 }
 
-.inputLarge {
-    background-color: red;
+input.inputLarge {
+    width: 41rem;
 }
 
 .container input:focus, .container textarea:focus {
