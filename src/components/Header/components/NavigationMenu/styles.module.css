@@ -1,6 +1,5 @@
 .container {
     grid-area: NavigationMenu;
-    margin-right: 5rem;
 }
 
 .container__menuList {
@@ -20,7 +19,7 @@
 }
 
 .menuList__item a {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-base);
     color: var(--text-color-primary);
 
     display: flex;

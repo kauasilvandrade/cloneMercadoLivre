@@ -1,6 +1,6 @@
 .header {
-    background-color: var(--bg-color-header);
     width: 100%;
+    background-color: var(--bg-color-header);
     padding-block: 1rem;
 }
 
@@ -14,4 +14,5 @@
         "Logo SearchBar Ads"
         "UserAddress NavigationMenu UserMenu";
     align-items: center;
+    grid-gap: 0.5rem 1.2rem;
 }
