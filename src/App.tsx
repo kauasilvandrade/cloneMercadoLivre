@@ -57,24 +57,52 @@ export function App() {
   function verificationForm(event: any) {
     event.preventDefault()
 
-    setErros({
-      cep: data.cep === "",
-      address: data.address === "",
+    const newErrors = {
+      cep: data.cep.length < 8,
+      address: data.address.length < 2,
       number: !noNumber && data.number === "",
       whereYouWork: data.whereYouWork === ""
-    })
+    }
+
+    setErros(newErrors)
+
+    const hasError = Object.values(newErrors).some(Boolean)
+
+    if (hasError) return
+
+    localStorage.setItem("address", JSON.stringify(data))
+
+      console.log("Salvo com sucesso!")
+
   }
 
-  // useEffect(() => {
-  //   async function fetchCep() {
-  //     const url = await fetch("https://viacep.com.br/ws/02962000/json/");
-  //     const response = await url.json()
-  //     console.log(response.bairro)
-  //   }
+  useEffect(() => {
+    if (data.cep.length !== 9) return
 
-  //   fetchCep()
-  // }, [])
+    async function fetchCep() {
+      try {
+        const url = await fetch(`https://viacep.com.br/ws/${data.cep}/json/`)
+        const response = await url.json()
 
+        if (response.erro) {
+          console.log("CEP inválido")
+        }
+
+        console.log(response)
+
+        setData(prev => ({
+          ...prev,
+          address: response.logradouro || "",
+          number: response.gia
+        }))
+
+      } catch (error) {
+        console.log("Erro na requisição", error)
+      }
+    }
+
+    fetchCep()
+  }, [data.cep])
 
   return (
     <div>
@@ -90,20 +118,24 @@ export function App() {
           <InputField
             name="cep"
             label="CEP"
+            value={data.cep}
             placeholder="Ex: 05410001"
-            maxLength={8}
+            maxLength={9}
             onChange={handleChange}
             erroMessage="Insira um cep válido"
             className={errors.cep ? stylesInputField.erro : ""}
           />
 
+          {}
+
           <div className={styles.container__inputs}>
             <InputField 
               name="address"
               label="Rua / Avenida"
+              value={data.address}
               placeholder="Ex: Avenida los Leones, 4563"
               onChange={handleChange}
-              erroMessage="Informe o número de endereço"
+              erroMessage="O endereço deve ter pelo menos 2 caracteres."
               className={errors.address ? stylesInputField.erro : ""}
             />
 
@@ -137,6 +169,7 @@ export function App() {
 
           <InputField 
             name="complement"
+            value={data.complement ?? ""}
             label="Complemento (opcional)"
             placeholder="Ex: 201"
             onChange={handleChange}
@@ -144,7 +177,10 @@ export function App() {
 
           <TextareaField 
             placeholder="Ex: Entre ruas, cor de edifício, não tem campainha."
+            value={data.additionalInformation}
             onChange={handleChange}
+            maxLength={128}
+            letters={data.additionalInformation?.length ?? 0}
           />
 
           <h4>Este é o seu trabalho ou sua casa?</h4>
@@ -163,6 +199,7 @@ export function App() {
           <InputField 
             name="name"
             label="Nome completo"
+            value={data.name}
             placeholder="Ex: João Paulo"
             size={"large"}
             onChange={handleChange}
@@ -171,6 +208,7 @@ export function App() {
           <InputField 
             name="contact"
             label="Telefone de contato"
+            value={data.contact}
             placeholder="Ex: 11 9607-1018"
             size={"large"}
             onChange={handleChange}

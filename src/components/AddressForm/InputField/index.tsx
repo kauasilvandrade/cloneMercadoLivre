@@ -24,9 +24,10 @@ export function InputField({ label, name, size ="default", checkbox, erroMessage
             <label htmlFor={name}>{label}</label>
 
             <input
+                {...rest}
                 id={name}
                 name={name}
-                value={rest.value || ""}
+                value={rest.value ?? ""}
                 onChange={rest.onChange}
                 disabled={isChecked}
                 placeholder={isChecked ? "SN" : rest.placeholder} 
