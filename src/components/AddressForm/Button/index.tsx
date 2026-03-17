@@ -1,9 +1,11 @@
 import styles from "./styles.module.css"
 
-export function Button() {
+type Props = React.ComponentProps<"button">
+
+export function Button({ ...rest }: Props) {
     return (
         <div className={styles.container}>
-            <button>Salvar</button>
+            <button {...rest} >Salvar</button>
         </div>
     )
 }

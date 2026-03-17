@@ -17,5 +17,18 @@
 }
 
 .container .container__checkBox:nth-child(2) {
+    margin-bottom: 1rem;
+}
+
+.container.erro .container__span {
+    display: flex;
+}
+
+.container__span {
+    color: red;
     margin-bottom: 2rem;
+
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
 }

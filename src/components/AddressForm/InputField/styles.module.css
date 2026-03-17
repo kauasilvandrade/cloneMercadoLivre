@@ -3,12 +3,45 @@
     flex-direction: column;
 
     margin-bottom: 2rem;
+
+    position: relative;
 }
 
-.container label {
+.container > label {
     margin-bottom: 0.5rem;
     font-size: var(--fs-sm);
 }
+
+.container > input {
+    max-width: 100%;
+    width: 18.5rem;
+}
+
+.container.erro .container__span {
+    display: flex;
+}
+
+.container__span {
+    color: red;
+    margin-block: 0.7rem;
+
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container input.inputLarge {
+    width: 41rem;
+}
+
+.container__checkbox {
+    position: absolute;
+    right: 1rem;
+    font-size: var(--fs-base) !important;
+    top: 2.3rem;
+}
+
+.container__checkbox input {}
 
 .container input, .container textarea {
     color: var(--text-color-secondary);
@@ -19,25 +52,6 @@
     border: 2px solid #00000045;
 }
 
-.container input {
-    max-width: 100%;
-    width: 18.5rem;
-}
-
-input.inputLarge {
-    width: 41rem;
-}
-
 .container input:focus, .container textarea:focus {
     border: 2px solid var(--stroke-color);
-}
-
-.container span {
-    color: var(--text-color-secondary);
-    font-size: var(--fs-sm);
-    letter-spacing: 1px;
-
-    display: block;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
 }
