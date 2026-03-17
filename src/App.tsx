@@ -8,6 +8,7 @@ import { InputField } from "./components/AddressForm/InputField"
 import { TextareaField } from "./components/AddressForm/TextareaField"
 import { AddressTypeSelector } from "./components/AddressForm/AddressTypeSelector"
 import { Button } from "./components/AddressForm/Button"
+import { Check } from "lucide-react"
 
 type FormData = {
   cep: string
@@ -32,6 +33,8 @@ export function App() {
     name: "",
     contact: ""
   })
+  
+  const [noNumber, setNoNumber] = useState(false)
 
   const [errors, setErros] = useState({
     cep: false,
@@ -40,6 +43,7 @@ export function App() {
     whereYouWork: false
   })
 
+
   function handleChange( e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target
 
@@ -47,7 +51,7 @@ export function App() {
       ...prev,
       [name]: value
     }))
-    
+
   }
   
   function verificationForm(event: any) {
@@ -56,7 +60,7 @@ export function App() {
     setErros({
       cep: data.cep === "",
       address: data.address === "",
-      number: data.number === "",
+      number: !noNumber && data.number === "",
       whereYouWork: data.whereYouWork === ""
     })
   }
@@ -102,12 +106,29 @@ export function App() {
               erroMessage="Informe o número de endereço"
               className={errors.address ? stylesInputField.erro : ""}
             />
+
             <InputField 
               name="number"
               label="Número"
+              value={data.number || ""}
               placeholder="Ex: 1234"
               maxLength={5}
-              checkbox={{ label: "Sem número" }}
+              checkbox={{ 
+                label: "Sem número",
+                onChange: (checked => {
+                  setNoNumber(checked)
+
+                  setData(prev =>({
+                    ...prev,
+                    number: "" 
+                  }))
+
+                  setErros(prev => ({
+                    ...prev,
+                    number: false
+                }))
+                })
+              }}
               onChange={handleChange}
               erroMessage="Você deve informar o número da rua."
               className={errors.number ? stylesInputField.erro : ""}
