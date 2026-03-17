@@ -40,35 +40,37 @@ export function App() {
             />
           </div>
 
-            <InputField 
-              name="cep"
-              label="Complemento (opcional)"
-              placeholder="Ex: 201"
-            />
+          <InputField 
+            name="cep"
+            label="Complemento (opcional)"
+            placeholder="Ex: 201"
+          />
 
-            <TextareaField 
-              placeholder="Ex: Entre ruas, cor de edifício, não tem campainha."
-            />
+          <TextareaField 
+            placeholder="Ex: Entre ruas, cor de edifício, não tem campainha."
+          />
 
-            <h4>Este é o seu trabalho ou sua casa?</h4>
+          <h4>Este é o seu trabalho ou sua casa?</h4>
 
-            <AddressTypeSelector />
+          <AddressTypeSelector />
 
-            <h4>Dados de contato</h4>
+          <h4>Dados de contato</h4>
 
-            <p>Se houver algum problema no envio, você receberá uma ligação neste número.</p>
+          <p>Se houver algum problema no envio, você receberá uma ligação neste número.</p>
 
-            <InputField 
-              name="name"
-              label="Nome completo"
-              placeholder="Ex: João Paulo"
-            />
+          <InputField 
+            name="name"
+            label="Nome completo"
+            placeholder="Ex: João Paulo"
+          />
 
-            <InputField 
-              name="contact"
-              label="Telefone de contato"
-              placeholder="Ex: 11 9607-1018"
-            />
+          <InputField 
+            name="contact"
+            label="Telefone de contato"
+            placeholder="Ex: 11 9607-1018"
+          />
+
+          <Button />
 
         </form>
 
